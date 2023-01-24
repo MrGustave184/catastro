@@ -25,19 +25,19 @@ class PropertyController extends Controller
             'area' => 500,
             'medidas' => [
                 'norte' => [
-                    'text' => 'pal norte',
+                    'texto' => 'text propiedad medida norte',
                     'ml' => 37
                 ],
                 'sur' => [
-                    'text' => 'pal sur',
+                    'texto' => 'text propiedad medida sur',
                     'ml' => 38
                 ],
                 'este' => [
-                    'text' => 'pal este',
+                    'texto' => 'text propiedad medida este',
                     'ml' => 38
                 ],
                 'oeste' => [
-                    'text' => 'pal oeste',
+                    'texto' => 'text propiedad medida oeste',
                     'ml' => 39
                 ],
             ]
