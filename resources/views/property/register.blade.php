@@ -9,7 +9,7 @@
         <!-- <p class="lead">App para registro de propiedades</p> -->
         <hr />
         <div class="content-background p-4 row">
-            <form>
+            <form action="{{ route('property.show') }}">
                 <div class="col d-flex justify-content-center"><h2>Datos del propietario</h2></div>
                 <div class="form-group mb-4">
                     <label for="exampleInputEmail1">Nombre del propietario</label>
@@ -71,7 +71,12 @@
                     </div>
                 </div>
                 <div class="col d-flex justify-content-center"><h2>Código Catastral</h2></div>
-                <div class="row">
+                <div class="form-group mb-4">
+                    <input type="text" class="form-control" id="codigo-catastral">
+                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                </div>
+
+                <!-- <div class="row">
                     <div class="col-12 col-md-6 col-lg-4 col-xl-2 mb-2">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -96,7 +101,63 @@
                             <input type="text" class="form-control">
                         </div>
                     </div>
-                </div>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-2 mb-2">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Amb</div>
+                            </div>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-2 mb-2">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Sec</div>
+                            </div>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-2 mb-2">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Man</div>
+                            </div>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-2 mb-2">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Par</div>
+                            </div>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-2 mb-2">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Sbp</div>
+                            </div>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-2 mb-2">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Niv</div>
+                            </div>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-2 mb-2">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Und</div>
+                            </div>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div> -->
                 <button type="submit" class="btn btn-primary">Registrar</button>
             </form>
         </div>

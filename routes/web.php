@@ -29,4 +29,5 @@ Route::get('/mision', function () {
 Route::prefix('terreno')->group(function () {
     Route::get('/registrar', [PropertyController::class, 'register'])->name('property.register');
     Route::get('/buscar', [PropertyController::class, 'search'])->name('property.search');
+    Route::get('/cedula', [PropertyController::class, 'show'])->name('property.show');
 });
