@@ -6,15 +6,17 @@
 @section('content')
     <div class="col pt-4">
         <h1>Registrar</h1>
-        <!-- <p class="lead">App para registro de propiedades</p> -->
         <hr />
         <div class="content-background p-4 row">
             <form action="{{ route('property.show') }}">
+                <div class="col d-flex justify-content-center"><h2>Encabezado</h2></div>
+                    <div class="form-group mb-4">
+                        <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                    </div>
                 <div class="col d-flex justify-content-center"><h2>Datos del propietario</h2></div>
                 <div class="form-group mb-4">
                     <label for="exampleInputEmail1">Nombre del propietario</label>
                     <input type="text" class="form-control" id="owner-name" aria-describedby="emailHelp" placeholder="Nombre">
-                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                 </div>
                 <label for="owner-ci">Cédula de Identidad</label>
                 <div class="input-group mb-4">

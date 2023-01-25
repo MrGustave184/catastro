@@ -14,6 +14,8 @@
     </div>
     <hr />
 
+    <p>{{ $data['encabezado'] }}</p>
+
     <table class="table table-bordered mt-3">
         <thead>
             <tr>
@@ -28,17 +30,6 @@
                 <td>{{ $medida['ml'] }} ML</td>
             </tr>
             @endforeach
-
-            <!-- <tr>
-                <th scope="row">Norte</th>
-                <td>pal norte</td>
-                <td>123</td>
-            </tr>
-            <tr>
-                <th scope="row">Norte</th>
-                <td>pal norte</td>
-                <td>123</td>
-            </tr> -->
         </tbody>
     </table>
 
@@ -71,4 +62,7 @@
             </tr>
         </tbody>
     </table>
+
+    <p>Se expide a petición de la parte interesada.</p>
+    <p>Fecha de expedición: {{ $data['date']->day }}/{{ $data['date']->month }}/{{ $data['date']->year }}</p>
 @endsection
