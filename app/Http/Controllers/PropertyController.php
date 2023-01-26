@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Property;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PropertyController extends Controller
 {
@@ -85,5 +86,21 @@ class PropertyController extends Controller
             ]
         ];
         return view('ejidos', ['ejidos' => $ejidos ]);
+    }
+
+    public function download(Request $request)
+    {
+        $property = Property::where('cedula', $request->cedula)->firstOrFail();
+
+        $pdf = Pdf::loadView($request->view, [
+            'data' => $property->formatForResponse()
+        ]);
+        return $pdf->stream("cedula_catastral_{$request->cedula}.pdf");
+
+        // $pdf = App::make('dompdf.wrapper');
+        // $pdf->loadHTML('<h1>Test</h1>');
+        // return $pdf->stream();
+
+        // return Pdf::loadFile(public_path().'/myfile.html')->save('/path-to/my_stored_file.pdf')->stream('download.pdf');
     }
 }

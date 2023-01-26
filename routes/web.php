@@ -40,3 +40,4 @@ Route::prefix('gravamenes')->group(function () {
 });
 
 Route::get('/ejidos', [PropertyController::class, 'ejidos'])->name('ejidos');
+Route::get('/descarga', [PropertyController::class, 'download'])->name('download');

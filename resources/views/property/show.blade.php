@@ -12,7 +12,11 @@
             <h1 class="ms-4">Cédula Catastral</h1>
         </div>
         <div class="col-2 d-flex align-items-center">
-            <button class="btn btn-primary">Descargar PDF</button>
+            <form action="{{ route('download') }}" method="get">
+                <input type="hidden" name="view" value="property.show">
+                <input type="hidden" name="cedula" value="{{ $data['cedula'] }}">
+                <button class="btn btn-primary">Descargar PDF</button>
+            </form>
         </div>
     </div>
     <hr />
