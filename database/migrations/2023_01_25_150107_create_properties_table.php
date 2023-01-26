@@ -27,6 +27,7 @@ class CreatePropertiesTable extends Migration
             $table->decimal('oeste_ml');
             $table->decimal('area');
             $table->string('codigo_catastral');
+            $table->string('gravamenes');
             $table->timestamps();
         });
     }

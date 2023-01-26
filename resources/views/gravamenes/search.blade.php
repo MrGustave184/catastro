@@ -1,15 +1,15 @@
 @extends('layout')
 @section('title')
-    Ejidos Municipales
+    Gravámenes
 @endsection
 
 @section('content')
     <div class="col pt-4">
-        <h1>Ejidos Municipales</h1>
+        <h1>Gravámenes</h1>
         <p class="lead">Buscar por cédula</p>
         <hr />
         <div class="container content-background p-4">
-            <form method="POST" action="{{ route('ejidos.show') }}">
+            <form method="POST" action="{{ route('gravamenes.show') }}">
                 @csrf
                 <div class="form-group mb-4">
                     <label for="owner-ci">Cédula de Identidad</label>

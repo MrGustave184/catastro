@@ -15,11 +15,11 @@
                     <i class="bi bi-journal-album"></i><span class="ms-1 d-none d-sm-inline">Acerca de nosotros</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="{{ route('mision') }}" class="nav-link px-sm-0 px-2">
                     <i class="bi bi-people-fill"></i><span class="ms-1 d-none d-sm-inline">Misión, visión y valores</span>
                 </a>
-            </li>
+            </li> -->
             <li class="dropdown">
                 <a href="#" class="nav-link dropdown-toggle px-sm-0 px-2" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-houses-fill"></i><span class="ms-1 d-none d-sm-inline">Catastro</span>
@@ -30,8 +30,13 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="{{ route('ejidos.search') }}" class="nav-link px-sm-0 px-2">
-                    <i class="bi bi-bank"></i><span class="ms-1 d-none d-sm-inline">Ejidos Municipales</span>
+                <a href="{{ route('gravamenes.search') }}" class="nav-link px-sm-0 px-2">
+                    <i class="bi bi-bank"></i><span class="ms-1 d-none d-sm-inline">Gravámenes</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('ejidos') }}" class="nav-link px-sm-0 px-2">
+                    <i class="bi bi-image-fill"></i><span class="ms-1 d-none d-sm-inline">Ejidos Municipales</span>
                 </a>
             </li>
         </ul>

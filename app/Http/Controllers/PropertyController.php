@@ -15,7 +15,12 @@ class PropertyController extends Controller
 
     public function create(Request $request)
     {
-        $property = Property::create($request->all());
+        $propertyData = $request->all();
+        $solventeArray = ['solvente', 'no solvente'];
+        $solvente = array_rand($solventeArray);
+
+        $propertyData['gravamenes'] = $solventeArray[$solvente];
+        $property = Property::create($propertyData);
 
         return view('property.show', [
             'data' => $property->formatForResponse()
@@ -41,24 +46,44 @@ class PropertyController extends Controller
         return view('property.show');
     }
 
-    public function showEjido(Request $request)
+    public function showGravamenes(Request $request)
     {
         $property = Property::where('cedula', $request->cedula)->firstOrFail();
-        $solventeArray = ['solvente', 'no solvente'];
-        $solvente = array_rand($solventeArray);
 
-        return view('ejidos.show', [
+        return view('gravamenes.show', [
             'data' => [
                 'nombre' => $property->nombre,
                 'cedula' => $property->cedula,
-                'solvente' => $solventeArray[$solvente],
+                'solvente' => $property->gravamenes,
                 'date' => Carbon::parse()
             ]
         ]);
     }
 
-    public function searchEjido()
+    public function searchGravamenes()
     {
-        return view('ejidos.search');
+        return view('gravamenes.search');
+    }
+
+    public function ejidos()
+    {
+        $ejidos = [
+            [
+                'caracteristicas' => 'pH: 4, Textura: arenoso, Estructura: deteriorada',
+                'ubicacion' => 'Caracas, San Martín',
+                'superficie' => '250',
+            ],
+            [
+                'caracteristicas' => 'pH: 7, Textura: arcilloso, Estructura: buenas condiciones',
+                'ubicacion' => 'Caracas, Barrio Bucaral',
+                'superficie' => '350',
+            ],
+            [
+                'caracteristicas' => 'pH: 6, Textura: arenoso, Estructura: buenas condiciones',
+                'ubicacion' => 'Caracas, Los Naranjos',
+                'superficie' => '100',
+            ]
+        ];
+        return view('ejidos', ['ejidos' => $ejidos ]);
     }
 }

@@ -1,4 +1,7 @@
 @extends('layout')
+@section('title')
+    Cédula Catastral
+@endsection
 
 @section('content')
     <div class="row">

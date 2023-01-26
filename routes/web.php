@@ -34,7 +34,9 @@ Route::prefix('terreno')->group(function () {
     Route::post('/searchByCI', [PropertyController::class, 'searchByCI'])->name('property.searchByCI');
 });
 
-Route::prefix('ejidos')->group(function () {
-    Route::post('/mostrar', [PropertyController::class, 'showEjido'])->name('ejidos.show');
-    Route::get('/buscar', [PropertyController::class, 'searchEjido'])->name('ejidos.search');
+Route::prefix('gravamenes')->group(function () {
+    Route::post('/mostrar', [PropertyController::class, 'showGravamenes'])->name('gravamenes.show');
+    Route::get('/buscar', [PropertyController::class, 'searchGravamenes'])->name('gravamenes.search');
 });
+
+Route::get('/ejidos', [PropertyController::class, 'ejidos'])->name('ejidos');

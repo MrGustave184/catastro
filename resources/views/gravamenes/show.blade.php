@@ -1,4 +1,7 @@
 @extends('layout')
+@section('title')
+    Gravámenes
+@endsection
 
 @section('content')
     <div class="row">
@@ -6,7 +9,7 @@
             <img src="{{ url('/img/logo.png') }}">
         </div>
         <div class="col-5 col-md-6 d-flex justify-content-start align-items-center pt-4">
-            <h1 class="ms-4">Ejidos Municipales</h1>
+            <h1 class="ms-4">Gravámenes</h1>
         </div>
         <div class="col-2 d-flex align-items-center">
             <button class="btn btn-primary">Descargar PDF</button>
@@ -17,7 +20,7 @@
     <table class="table table-bordered mt-3">
         <thead>
             <tr>
-                <th colspan="3" class="text-center">Ejidos Municipales</th>
+                <th colspan="3" class="text-center">Gravámenes</th>
             </tr>
             <tr>
                 <th class="text-center">Nombre</th>
