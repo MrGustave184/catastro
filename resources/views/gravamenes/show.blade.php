@@ -11,9 +11,6 @@
         <div class="col-5 col-md-6 d-flex justify-content-start align-items-center pt-4">
             <h1 class="ms-4">Gravámenes</h1>
         </div>
-        <div class="col-2 d-flex align-items-center">
-            <button class="btn btn-primary">Descargar PDF</button>
-        </div>
     </div>
     <hr />
 
