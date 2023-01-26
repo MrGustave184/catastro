@@ -27,11 +27,12 @@
                 <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdown">
                     <li><a class="dropdown-item" href="{{ route('property.register') }}">Catastro inmobiliario</a></li>
                     <li><a class="dropdown-item" href="{{ route('property.search') }}">Buscar</a></li>
-                    <!-- <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Sign out</a></li> -->
                 </ul>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('ejidos.search') }}" class="nav-link px-sm-0 px-2">
+                    <i class="bi bi-bank"></i><span class="ms-1 d-none d-sm-inline">Ejidos Municipales</span>
+                </a>
             </li>
         </ul>
     </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Models\Property;
 
 class PropertyController extends Controller
 {
@@ -12,42 +13,52 @@ class PropertyController extends Controller
         return view('property.register');
     }
 
+    public function create(Request $request)
+    {
+        $property = Property::create($request->all());
+
+        return view('property.show', [
+            'data' => $property->formatForResponse()
+        ]);
+    }
+
     public function search()
     {
         return view('property.search');
     }
 
-    public function show()
+    public function searchByCI(Request $request)
     {
-        $data = [
-            'nombre' => 'david',
-            'cedula' => 'd18410341',
-            'codigo_catastral' => str_split('123456789012345678901234567'),
-            'area' => 500,
-            'encabezado' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi illo at quidem reiciendis ratione, recusandae nemo, eos velit blanditiis ducimus exercitationem sunt inventore, molestiae laudantium adipisci accusamus dolor dolorem sit.',
-            'medidas' => [
-                'norte' => [
-                    'texto' => 'text propiedad medida norte',
-                    'ml' => 37
-                ],
-                'sur' => [
-                    'texto' => 'text propiedad medida sur',
-                    'ml' => 38
-                ],
-                'este' => [
-                    'texto' => 'text propiedad medida este',
-                    'ml' => 38
-                ],
-                'oeste' => [
-                    'texto' => 'text propiedad medida oeste',
-                    'ml' => 39
-                ],
-            ],
-            'date' => Carbon::parse()
-        ];
+        $property = Property::where('cedula', $request->cedula)->firstOrFail();
 
         return view('property.show', [
-            'data' => $data
+            'data' => $property->formatForResponse()
         ]);
+    }
+
+    public function show()
+    {
+        return view('property.show');
+    }
+
+    public function showEjido(Request $request)
+    {
+        $property = Property::where('cedula', $request->cedula)->firstOrFail();
+        $solventeArray = ['solvente', 'no solvente'];
+        $solvente = array_rand($solventeArray);
+
+        return view('ejidos.show', [
+            'data' => [
+                'nombre' => $property->nombre,
+                'cedula' => $property->cedula,
+                'solvente' => $solventeArray[$solvente],
+                'date' => Carbon::parse()
+            ]
+        ]);
+    }
+
+    public function searchEjido()
+    {
+        return view('ejidos.search');
     }
 }

@@ -13,7 +13,8 @@
         </div>
     </div>
     <hr />
-
+    <p>Nombre: {{ $data['nombre'] }}</p>
+    <p>C.I. {{ $data['cedula'] }}</p>
     <p>{{ $data['encabezado'] }}</p>
 
     <table class="table table-bordered mt-3">
@@ -33,7 +34,7 @@
         </tbody>
     </table>
 
-    <p><strong>Nota:</strong> área aproximada del terreno: 500m<sup>2</sup></p>
+    <p><strong>Nota:</strong> área aproximada del terreno: {{ $data['area'] }}m<sup>2</sup></p>
 
     <p class="mt-5">Código catastral que reposa en los archivos de la oficina Municipal Catastral</p>
     <table class="table table-bordered mt-3">

@@ -30,4 +30,11 @@ Route::prefix('terreno')->group(function () {
     Route::get('/registrar', [PropertyController::class, 'register'])->name('property.register');
     Route::get('/buscar', [PropertyController::class, 'search'])->name('property.search');
     Route::get('/cedula', [PropertyController::class, 'show'])->name('property.show');
+    Route::post('/create', [PropertyController::class, 'create'])->name('property.create');
+    Route::post('/searchByCI', [PropertyController::class, 'searchByCI'])->name('property.searchByCI');
+});
+
+Route::prefix('ejidos')->group(function () {
+    Route::post('/mostrar', [PropertyController::class, 'showEjido'])->name('ejidos.show');
+    Route::get('/buscar', [PropertyController::class, 'searchEjido'])->name('ejidos.search');
 });
